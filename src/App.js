@@ -1,20 +1,19 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import Cards from "./components/Cards"
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import {Routes,Route } from "react-router-dom";
+import Pricing from './components/Pricing'
 
 function App() {
   return (
     <>
-    <BrowserRouter>
+  
     <Routes>
-      <Route>
+      <Route path="/" Component={Cards} />
+      <Route path="Pricing" Component={Pricing} />
         
-      </Route>
+      
     </Routes>
-    </BrowserRouter>
-
-   <Cards/>
     
   </>
   );

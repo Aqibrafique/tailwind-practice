@@ -3,9 +3,18 @@ import Logo from "./img/logo.svg";
 import { Link } from "react-router-dom";
 import Heroimage from "./img/illustration-intro.svg";
 import Anisha from "./img/avatar-anisha.png";
+import Footerlogo from "./img/logo-white.svg";
+import Social1 from "./img/icon-facebook.svg";
+import Social2 from "./img/icon-twitter.svg";
+import Social3 from "./img/icon-youtube.svg";
+import Social4 from "./img/icon-pinterest.svg";
+import Social5 from "./img/icon-instagram.svg";
+// import Pricing from "./Pricing";
+// import BackImage from './img/bg-simplify-section-desktop.svg'
 function Cards() {
   return (
     <>
+      {/* <div style={{backgroundImage: URL('BackImage')}}> */}
       {/* nav bar */}
       <nav className=" container mx-auto relative ">
         <div className="flex justify-between items-center">
@@ -15,9 +24,9 @@ function Cards() {
           </div>
 
           <div className="hidden md:flex space-x-12">
-            <a href="#" className="hover:text-yellow-600">
+            <Link to="Pricing" className="hover:text-yellow-600">
               pricing
-            </a>
+            </Link>
             <a href="#" className="hover:text-yellow-600">
               Product
             </a>
@@ -35,9 +44,37 @@ function Cards() {
           <button className="hidden md:block bg-yellow-600 rounded-full p-3 px-3 py-2 text-white hover:text-red-900">
             Get Started
           </button>
+          {/* hamburger menu */}
+          <button
+            className="hamburger open block md:hidden focus:outline-none"
+            id="menu-btn"
+          >
+            <span className="hamburger-top"></span>
+            <span className="hamburger-middle"></span>
+            <span className="hamburger-bottom"></span>
+          </button>
         </div>
-        {/* hero section */}
+        <div className="md:hidden">
+          <div className="flex flex-col hidden items-center absolute">
+            <Link to="Pricing" className="hover:text-yellow-600">
+              pricing
+            </Link>
+            <a href="#" className="hover:text-yellow-600">
+              Product
+            </a>
+            <a href="#" className="hover:text-yellow-600">
+              About us
+            </a>
+            <a href="#" className="hover:text-yellow-600">
+              Carrers
+            </a>
+            <a href="#" className="hover:text-yellow-600">
+              Community
+            </a>
+          </div>
+        </div>
       </nav>
+      {/* hero section */}
       <section>
         <div className=" flex flex-col-reverse md:flex-row items-center container mx-auto">
           {/* left section */}
@@ -165,12 +202,12 @@ function Cards() {
       {/* Testimonials */}
       <section>
         {/* heading */}
-        <div className="container m-auto text-center mt-32">
+        <div className="container  m-auto text-center mt-32">
           <h1 className="font-bold text-4xl">What's Different about Manage</h1>
           {/* profile cards */}
-          <div className="flex flex-col space-y-24 md:flex-row md:space-x-6 mt-56">
+          <div className="flex flex-col space-y-24  md:flex-row md:space-x-6 md:space-y-0 mt-32">
             {/* first card */}
-            <div className="flex flex-col md:w-1/3 border rounded-lg items-center ">
+            <div className="flex flex-col md:w-1/3 border rounded-lg items-center">
               <img className="w-16 -mt-9 " alt="error" src={Anisha} />
               <h4 className="text-lg font-bold mt-8">Alisha Li</h4>
               <p className="text-sm text-slate-400 p-6">
@@ -203,8 +240,75 @@ function Cards() {
               </p>
             </div>
           </div>
+          <button className=" bg-yellow-600 rounded-full p-3 px-3 py-2 text-white hover:text-red-900 mt-10">
+            Get Started
+          </button>
         </div>
       </section>
+      {/* second last section */}
+      <div className=" bg-yellow-600 mt-10">
+        <div className="  container m-auto flex flex-col justify-between items-center md:flex-row py-24 px-6 md:py-12 space-y-12 md:space-y-0  ">
+          <h1 className="font-bold text-5xl md:text-4xl text-center">
+            Simplify how your team works today.
+          </h1>
+          <button className=" bg-white rounded-full p-3 px-3 py-2   text-yellow-600 hover:text-red-900 mt-10">
+            Get Started
+          </button>
+        </div>
+      </div>
+      {/* footer */}
+      <div className="bg-gray-800">
+        {/* container */}
+        <div className="flex flex-col md:flex-row justify-around items-center container m-auto py-10 px-6 space-y-6 md:space-y-0">
+          {/* div 1 */}
+          <div className="flex flex-col items-center justify-between  px-4 py-6">
+            <div>
+              <img src={Footerlogo} className="h-8" alt="error logo" />
+            </div>
+            <div className="flex flex-row space-x-3 mt-6 ">
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://www.facebook.com/Pakistan/"
+              >
+                <img src={Social1} alt="error" />
+              </a>
+              <a href="#">
+                <img src={Social2} alt="error" />
+              </a>
+              <a href="#">
+                <img src={Social3} alt="error" />
+              </a>
+              <a href="#">
+                <img src={Social4} alt="error" />
+              </a>
+              <a href="#">
+                <img src={Social5} alt="error" />
+              </a>
+            </div>
+          </div>
+          {/* div 2 */}
+          <div className="flex justify-around text-white space-x-24  px-4 py-6">
+            <div className="flex flex-col">
+              <a href="#">Home</a>
+              <Link to="Pricing">Pricing</Link>
+              <a href="#">Product</a>
+              <a href="#">About</a>
+            </div>
+            <div className="flex flex-col">
+              <a href="#">Careers</a>
+              <a href="#">Community</a>
+              <a href="#">Privicy Policies</a>
+            </div>
+          </div>
+        </div>
+        {/* div 3 */}
+
+        <div className="flex justify-center text-white py-4">
+          CopyRight &copy; 2022, All Rights Reserved
+        </div>
+      </div>
+      {/* </div> */}
     </>
   );
 }
